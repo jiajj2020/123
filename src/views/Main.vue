@@ -44,7 +44,7 @@
                     <div class="card">
                     <el-menu
                             default-active="0"
-                            unique-opened="true"
+                            :unique-opened="true"
                             :collapse="isCollapse"
                             :router="true"
 
@@ -63,10 +63,10 @@
                             <el-menu-item class="text left-action" index="/pingdingshan" :route="{name:'pingdingshan'}">平顶山市
                             </el-menu-item>
                             <el-menu-item class="text left-action" index="/shenzhen" :route="{name:'shenzhen'}">深圳市</el-menu-item>
-                        
-                            
+
+
                         </el-submenu>
-                
+
                         <el-submenu class="text left-action"  index="1">
                             <template class="text left-action"  slot="title">
                                 <i class="fa fa-align-justify" aria-hidden="true"></i><span class="text left-action"> 数据查询</span>
