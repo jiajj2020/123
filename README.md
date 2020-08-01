@@ -1,3 +1,3 @@
-# Wastesystem
+## wasteSystem
 
-# npm install
+**npm install**
