@@ -5,7 +5,7 @@
         <el-row style="padding-top: 10px">
           <el-col :xs="24" :sm="24" :md="11" :lg="5" :xl="5">
             <el-form-item class="main-text" label="类型统计 :" label-width="110px">
-              <el-cascader v-model="value" :options="options" @change="getChartData">
+              <el-cascader v-model="values" :options="options" @change="getChartData">
               </el-cascader>
             </el-form-item>
           </el-col>
@@ -18,10 +18,10 @@
         </el-row>
       </el-form>
       <el-col :xs="24" :sm="24" :md="11" :lg="11">
-        <div id="main" style="height:350px"></div>
+        <div id="main" style="height:350px" v-if="values[0]==='cunliangpaicha'"></div>
       </el-col>
-      <el-col :offset="2" :xs="24" :sm="24" :md="11" :lg="11">
-        <div id="main3" style="height: 350px;"></div>
+      <el-col :offset="2" :xs="24" :sm="24" :md="11" :lg="11" >
+        <div id="main3" style="height: 350px;" v-if="values[0]==='sheshijianshe'"></div>
       </el-col>
       <!-- <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <div id="main2" style="height: 400px;"></div>
@@ -37,7 +37,7 @@
     name: '',
     data() {
       return {
-        value: [],
+        values: '',
         options: [{
           value: 'cunliangpaicha',
           label: '存量排查',
@@ -247,10 +247,15 @@
         })
       },
       getChartData() {
-        if(this.value="cunliangpaicha"){
-          this.drawPie1('main');
-        }else if(this.value="sheshijianshe"){
-           this.drawPie2('main3')
+        console.log(this.values[0])
+        if(this.values=="cunliangpaicha"){
+          this.$nextTick(() => {
+            this.drawPie1('main');
+            });
+        }else if(this.values=="sheshijianshe"){
+           this.$nextTick(() => {
+            this.drawPie2('main3');
+            });
         }
 
       }

@@ -16,12 +16,12 @@
                     </el-col>
                 </el-row>
             </el-form>
-            
+
             <el-table
 
                 :header-cell-style="{background:'#0757A0',color:'#fff'}"
                 :data="tableData"
-                style="width: 100%；border:0">
+                style="width: 100%;border:0">
                 <el-table-column
                 prop="num"
                 label="序号"
@@ -45,14 +45,14 @@
                 label="原料情况">
                 </el-table-column>
             </el-table>
-            
+
             <div style="color:#fff;float:right">共3页 , 共37条   首页  上一页  1  2  3  下一页 末页</div>
     </div>
     </div>
 </template>
 
 <script>
-    export default { 
+    export default {
         data() {
         return {
             city: '',
@@ -112,11 +112,11 @@
           type:'工程渣土'
         }]
          }
-                    
+
             },
         methods: {
         }
-            
+
     }
 </script>
 
@@ -145,7 +145,7 @@
     .el-table__row--striped{
         background: #0757A0!important;
     }
-    .el-table tbody tr:hover>td { 
+    .el-table tbody tr:hover>td {
     background-color:#0757A0!important
 }
 .el-table td{
@@ -158,6 +158,6 @@
 .el-table{
     color: #fff;
 }
-    
+
 
 </style>

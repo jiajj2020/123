@@ -60,11 +60,6 @@ const routes = [
         component: () => import('../views/buffer.vue')
       },
       {
-        path: '/UrbanStatistics', // 填埋场
-        name: 'UrbanStatistics',
-        component: () => import('../views/UrbanStatistics.vue')
-      },
-      {
         path: '/ThermodynamicDiagram', // 热力图
         name: 'ThermodynamicDiagram',
         component: () => import('../views/ThermodynamicDiagram.vue')
@@ -75,9 +70,14 @@ const routes = [
         component: () => import('../views/Inclinometer.vue')
       },
       {
+        path: '/UrbanStatistics', // 城市统计
+        name: 'UrbanStatistics',
+        component: () => import('../views/statistics/UrbanStatistics.vue')
+      },
+      {
         path: '/leixingtongji', // 类型统计
         name: 'leixingtongji',
-        component: () => import('../views/leixingtongji.vue')
+        component: () => import('../views/statistics/typeStatistics.vue')
       },
       {
         path: '/InventoryInvestigation', // 设置页面的路由
