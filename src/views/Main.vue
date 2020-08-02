@@ -6,11 +6,31 @@
         <el-col :sm="24" :md="1" :lg="1">
           <img :src="imgUrl" style="height:50px">
         </el-col>
-        <el-col :sm="24" :md="12" :lg="6">
+        <el-col :sm="24" :md="12" :lg="12">
           <p class="h1">建筑垃圾识别监测系统</p>
           <p>System For Identifying And Monitoring Construction Waste</p>
         </el-col>
-        <el-col :offset="15" :sm="24" :md="2" :lg="2">
+        <el-col :offset="7" :sm="24" :md="2" :lg="2">
+          <el-dropdown trigger="hover" @command="handleCommand">
+            <div>
+              <span style="color:#fff;">{{selectCity}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+            </div>
+            <el-dropdown-menu class="user-dropdown " slot="dropdown"
+              style="background-color: rgba(8, 67, 121,1);border: 0px solid #000;">
+              <el-dropdown-item class="action" command="pingDS">
+                <span style="display:block;color: #fff;">
+                  <i class="iconfont icon-securityscan" style="font-size: 14px;margin-right:10px;" />
+                  平顶山市
+                </span>
+              </el-dropdown-item>
+              <el-dropdown-item class="action" command="shenZ">
+                <span style="display:block;color: #fff;">
+                  <i class="iconfont icon-logout" style="font-size: 14px;margin-right:10px;" />深圳市</span>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </el-col>
+        <el-col :sm="20" :md="2" :lg="2">
           <div style="float:left;color:#fff;">
             <span style="margin-right: 1vh;">Hi , admin</span>
             <span>|</span>
@@ -51,7 +71,7 @@
                 <i style="color:#fff" class="fa fa-magic"></i>
                 <span slot="title">首页</span>
               </el-menu-item>
-              <el-submenu class="text left-action" index="10">
+              <!-- <el-submenu class="text left-action" index="10">
                 <template class="text left-action" slot="title">
                   <i class="fa fa-align-justify" aria-hidden="true"></i><span class="text left-action"> 示范城市</span>
                 </template>
@@ -61,7 +81,7 @@
                 <el-menu-item class="text left-action" index="/shenzhen" :route="{name:'shenzhen'}">深圳市</el-menu-item>
 
 
-              </el-submenu>
+              </el-submenu> -->
 
               <el-submenu class="text left-action" index="1">
                 <template class="text left-action" slot="title">
@@ -146,6 +166,7 @@
     data: function () {
       return {
         imgUrl: require("../assets/images/locationMap.png"),
+        selectCity:'选择城市',
         isCollapse: false, // 决定左侧导航栏是否展开
       }
     },
@@ -162,7 +183,22 @@
     methods: {
       changeCollapse: function () { // 更改左侧导航栏展示状态
         this.isCollapse = !this.isCollapse;
-      }
+      },
+
+      handleCommand(command) {
+        if(command=='pingDS'){
+          this.selectCity = '平顶山市';
+          //指定跳转的地址 this.$router.replace('/menu')
+          this.$router.replace('/pingdingshan')
+        }else if(command=='shenZ'){
+          this.selectCity = '深圳市';
+          this.$router.replace('/shenzhen')
+        }else{
+          return
+        }
+      },
+    },
+    created(){
     }
   }
 
@@ -193,7 +229,7 @@
     width: 400px;
   }
 
-  .h2 {
+  /* .h2 {
     font-family: Georgia, serif;
     font-weight: bold;
     font-size: 26px;
@@ -202,7 +238,7 @@
     line-height: 35px;
     overflow: hidden;
     height: 100%;
-  }
+  } */
 
   .el-header,
   .el-main {

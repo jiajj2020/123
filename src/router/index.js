@@ -27,63 +27,58 @@ const routes = [
       {
         path: '/pingdingshan', // 平顶山
         name: 'pingdingshan',
-        component: () => import('../views/pingdingshan.vue')
+        component: () => import('../views/exemCities/pingdingshan.vue')
       },
       {
         path: '/shenzhen', // 深圳
         name: 'shenzhen',
-        component: () => import('../views/shenzhen.vue')
+        component: () => import('../views/exemCities/shenzhen.vue')
       },
       {
-        path: '/sheshi', // 设施情况
+        path: '/sheshi', // 数据查询——设施情况
         name: 'sheshi',
-        component: () => import('../views/sheshi.vue')
+        component: () => import('../views/jquery/sheshi.vue')
       },
       {
-        path: '/disposal', // 处理处置
+        path: '/InventoryInvestigation', // 数据查询——存量排查
+        name: 'InventoryInvestigation',
+        component: () => import('../views/jquery/checkReserves.vue')
+      },
+      {
+        path: '/disposal', // 数据查询——处理处置
         name: 'disposal',
-        component: () => import('../views/disposal.vue')
+        component: () => import('../views/jquery/disposal.vue')
       },
       {
-        path: '/ResourceUtilization', // 资源利用
+        path: '/ResourceUtilization', // 数据查询——资源利用
         name: 'ResourceUtilization',
-        component: () => import('../views/ResourceUtilization.vue')
+        component: () => import('../views/jquery/ResourceUtilization.vue')
       },
       {
-        path: '/LandfillFacilities', // 填埋场
-        name: 'LandfillFacilities',
-        component: () => import('../views/LandfillFacilities.vue')
-      },
-      {
-        path: '/buffer', // 填埋场
+        path: '/buffer', // 空间分析——缓冲区
         name: 'buffer',
-        component: () => import('../views/buffer.vue')
+        component: () => import('../views/spaAnalysis/buffer.vue')
       },
       {
-        path: '/ThermodynamicDiagram', // 热力图
+        path: '/ThermodynamicDiagram', // 空间分析——热力图
         name: 'ThermodynamicDiagram',
-        component: () => import('../views/ThermodynamicDiagram.vue')
+        component: () => import('../views/spaAnalysis/heatmap.vue')
       },
       {
-        path: '/Inclinometer', // 斜测仪监测
+        path: '/Inclinometer', // 物联网——斜测仪监测
         name: 'Inclinometer',
-        component: () => import('../views/Inclinometer.vue')
+        component: () => import('../views/IOT/Inclinometer.vue')
       },
       {
-        path: '/UrbanStatistics', // 城市统计
+        path: '/UrbanStatistics', // 统计分析——城市统计
         name: 'UrbanStatistics',
         component: () => import('../views/statistics/UrbanStatistics.vue')
       },
       {
-        path: '/leixingtongji', // 类型统计
+        path: '/leixingtongji', // 统计分析——类型统计
         name: 'leixingtongji',
         component: () => import('../views/statistics/typeStatistics.vue')
       },
-      {
-        path: '/InventoryInvestigation', // 设置页面的路由
-        name: 'InventoryInvestigation',
-        component: () => import('../views/InventoryInvestigation.vue')
-      }
 
     ]
   },

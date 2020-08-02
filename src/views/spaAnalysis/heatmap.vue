@@ -1,8 +1,8 @@
 <template>
     <div style="width:100%;background-color:#084D8E;">
         <div class="card" style="margin-top:1px;">
-          <el-row>
-            
+          <!-- <el-row>
+
             <div class="h2"  :xs="24" :sm="24" :md="24" :lg="24" :xl="24" >
                     建筑垃圾存量热力图
                 </div>
@@ -16,25 +16,19 @@
                 </el-option>
             </el-select>
             </el-col>
-          </el-row>
+          </el-row> -->
           <el-row>
-           
             <el-col :span="21" :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                  <div id="mapDiv" class="mapDiv">
                 </div>
             </el-col>
           </el-row>
-            
-            <!-- <el-col :offset="3" :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
-               
-            </el-col> -->
-          
         </div>
     </div>
 </template>
- 
+
 <script>
-import BaiduMap from '../init'
+import mapWorld from '../../init'
 // import {getCity} from '@/api/remote'
 // import BMap from 'BMap'
 var map;
@@ -86,7 +80,7 @@ export default {
           {name: '鲁山县',lat:33.740325 ,lng:112.906703, count: 170},
           {name: '郏县',lat:33.971993 ,lng:113.220451, count: 240},
           {name: '舞钢市',lat:33.302082 ,lng:113.52625, count: 260},
-          {name: '汝州市',lat:34.167408 ,lng:112.845336, count: 250} 
+          {name: '汝州市',lat:34.167408 ,lng:112.845336, count: 250}
       ]
     }
   },
@@ -111,9 +105,9 @@ export default {
       window.onload = function() {
         console.log(11111)
       }
-      BaiduMap.init().then((T) => {
+      mapWorld.init().then((T) => {
                     //初始化地图对象
-            var zoom=11;        
+            var zoom=11;
             map = new T.Map('mapDiv', {datasourcesControl: true});
                         //创建对象
             var ctrl = new T.Control.MapType();
@@ -127,7 +121,7 @@ export default {
             control = new T.Control.Zoom();
             map.addControl(control);
             //添加缩放平移控件
-            
+
 
             //详细的参数,可以查看heatmap.js的文档 https://github.com/pa7/heatmap.js/blob/master/README.md
             //参数说明如下:
@@ -150,25 +144,25 @@ export default {
             });
             //  map.addOverLay(countriesOverlay)
             map.addOverLay(heatmapOverlay);
-            
+
             heatmapOverlay.setDataSet({data: this.points, max: 300});
             heatmapOverlay.show();
       }).catch(error => {
         console.log(error)
       })
     }
- 
+
   }
 }
 </script>
- 
+
 <style scoped>
 .mapDiv{
-  
+
 /* width: 90%; */
    height: 600px;
   text-align: center;
-  border-style: solid; 
+  border-style: solid;
   border-width: 5px;
   border-color: #0757A0;
 }

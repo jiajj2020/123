@@ -4,9 +4,9 @@
   </div>
 </div>
 </template>
- 
+
 <script>
-import BaiduMap from '../init'
+import BaiduMap from '../../init'
 // import {getCity} from '@/api/remote'
 // import BMap from 'BMap'
 var map;
@@ -21,7 +21,7 @@ export default {
       lay: '',
       map: '',
       drivingRoute: '',
- 
+
       _CarTrack: '',
       startIcon: '',
       endIcon: '',
@@ -55,11 +55,11 @@ export default {
         console.log(error)
       })
     }
- 
+
   }
 }
 </script>
- 
+
 <style scoped>
 .mapDiv{
   width: 100%;

@@ -4,9 +4,9 @@
   </div>
 </div>
 </template>
- 
+
 <script>
-import BaiduMap from '../init'
+import mapWorld from '../init'
 // import {getCity} from '@/api/remote'
 // import BMap from 'BMap'
 var map;
@@ -21,7 +21,6 @@ export default {
       lay: '',
       map: '',
       drivingRoute: '',
- 
       _CarTrack: '',
       startIcon: '',
       endIcon: '',
@@ -44,22 +43,20 @@ export default {
       window.onload = function() {
         console.log(11111)
       }
-      BaiduMap.init().then((T) => {
+      mapWorld.init().then((T) => {
                     //初始化地图对象
             var zoom=12;
             map = new T.Map("mapDiv");
             //设置显示地图的中心点和级别
             map.centerAndZoom(new T.LngLat(116.40969, 39.89945), zoom);
-            console.log(zoom);
       }).catch(error => {
         console.log(error)
       })
     }
- 
   }
 }
 </script>
- 
+
 <style scoped>
 .mapDiv{
   width: 100%;

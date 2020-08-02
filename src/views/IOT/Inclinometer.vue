@@ -13,9 +13,9 @@
         </div>
     </div>
 </template>
- 
+
 <script>
-import BaiduMap from '../init'
+import BaiduMap from '../../init'
 // import {getCity} from '@/api/remote'
 // import BMap from 'BMap'
 var map;
@@ -57,7 +57,7 @@ export default {
       }
       BaiduMap.init().then((T) => {
                     //初始化地图对象
-            var zoom=16;        
+            var zoom=16;
             map = new T.Map('mapDiv', {datasourcesControl: true});
                         //创建对象
             var ctrl = new T.Control.MapType();
@@ -108,17 +108,17 @@ export default {
         console.log(error)
       })
     }
- 
+
   }
 }
 </script>
- 
+
 <style scoped>
 .mapDiv{
   width: 90%;
   height: 700px;
   text-align: center;
-  border-style: solid; 
+  border-style: solid;
   border-width: 5px;
   border-color: #0757A0;
 }
