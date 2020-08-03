@@ -10,10 +10,10 @@
           <p class="h1">建筑垃圾识别监测系统</p>
           <p>System For Identifying And Monitoring Construction Waste</p>
         </el-col>
-        <el-col :offset="7" :sm="24" :md="2" :lg="2">
+        <el-col :offset="6" :sm="24" :md="2" :lg="2">
           <el-dropdown trigger="hover" @command="handleCommand">
             <div>
-              <span style="color:#fff;">{{selectCity}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+              <span style="color:#fff;">城市：{{selectCity}}<i class="el-icon-arrow-down el-icon--right"></i></span>
             </div>
             <el-dropdown-menu class="user-dropdown " slot="dropdown"
               style="background-color: rgba(8, 67, 121,1);border: 0px solid #000;">
@@ -30,7 +30,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
-        <el-col :sm="20" :md="2" :lg="2">
+        <el-col :offset="1":sm="20" :md="2" :lg="2">
           <div style="float:left;color:#fff;">
             <span style="margin-right: 1vh;">Hi , admin</span>
             <span>|</span>

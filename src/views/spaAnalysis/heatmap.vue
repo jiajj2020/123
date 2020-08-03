@@ -1,7 +1,7 @@
 <template>
     <div style="width:100%;background-color:#084D8E;">
         <div class="card" style="margin-top:1px;">
-          <!-- <el-row>
+          <el-row>
 
             <div class="h2"  :xs="24" :sm="24" :md="24" :lg="24" :xl="24" >
                     建筑垃圾存量热力图
@@ -16,7 +16,7 @@
                 </el-option>
             </el-select>
             </el-col>
-          </el-row> -->
+          </el-row>
           <el-row>
             <el-col :span="21" :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                  <div id="mapDiv" class="mapDiv">
