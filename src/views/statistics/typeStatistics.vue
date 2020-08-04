@@ -17,15 +17,20 @@
                     </el-col> -->
         </el-row>
       </el-form>
-      <el-col :xs="24" :sm="24" :md="11" :lg="11">
-        <div id="main" style="height:350px" v-if="values[0]==='cunliangpaicha'"></div>
-      </el-col>
-      <el-col :offset="2" :xs="24" :sm="24" :md="11" :lg="11" >
-        <div id="main3" style="height: 350px;" v-if="values[0]==='sheshijianshe'"></div>
-      </el-col>
-      <!-- <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+      <el-row id='1' v-if="values[0]==='cunliangpaicha'">
+        <el-col :xs="24" :sm="24" :md="11" :lg="11">
+          <div id="main" style="height:350px"></div>
+        </el-col>
+        <el-col :offset="2" :xs="24" :sm="24" :md="11" :lg="11">
+          <div id="main3" style="height: 350px;"></div>
+        </el-col>
+        <!-- <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <div id="main2" style="height: 400px;"></div>
             </el-col> -->
+      </el-row>
+      <el-row id='2' v-if="true">
+        11111111111111
+      </el-row>
     </div>
   </div>
 
@@ -54,101 +59,42 @@
       }
     },
     methods: {
-      drawPie1(id) {
-        this.charts = echarts.init(document.getElementById(id))
-        this.charts.setOption({
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'cross',
-              label: {
-                backgroundColor: '#6a7985'
-              }
-            }
-          },
-          title: {
-            text: '2019年11月-2020年5月平顶山市建筑垃圾排查情况',
-            textStyle: {
-              fontWeight: 'normal',
-              fontSize: 18, //字体大小
-              color: '#fff'
-            },
-            left: 'center'
-          },
-          toolbox: {
-            feature: {
-              saveAsImage: {}
-            }
-          },
-          grid: {
-            left: '3%',
-            right: '2%',
-            bottom: '3%',
-            containLabel: true
-          },
-          xAxis: [{
-            axisLine: {
-              lineStyle: {
-                color: '#fff', // 颜色
-                width: 3 // 粗细
-              }
-            },
+      drawPie1(jdakdhjahj) {
+        console.log("1111");
+        this.charts = echarts.init(document.getElementById(jdakdhjahj))
+        var hdjahdjahjdi = {
+          angleAxis: {},
+          radiusAxis: {
             type: 'category',
-            boundaryGap: false,
-            data: ['2019.11', '2019.12', '2020.01', '2020.02', '2020.03', '2020.04', '2020.05']
-          }],
-          yAxis: [{
-            axisLine: {
-              lineStyle: {
-                color: '#fff', // 颜色
-                width: 3 // 粗细
-              }
-            },
-            type: 'value'
-          }],
+            data: ['周一'],
+            z: 10
+          },
+          polar: {},
           series: [{
-              name: '装修垃圾',
-              type: 'line',
-              stack: '总量',
-              areaStyle: {},
-              data: [120, 132, 101, 134, 90, 230, 210]
-            },
-            {
-              name: '拆除垃圾',
-              type: 'line',
-              stack: '总量',
-              areaStyle: {},
-              data: [220, 182, 191, 234, 290, 330, 310]
-            },
-            {
-              name: '工程泥浆',
-              type: 'line',
-              stack: '总量',
-              areaStyle: {},
-              data: [150, 232, 201, 154, 190, 330, 410]
-            },
-            {
-              name: '工程垃圾',
-              type: 'line',
-              stack: '总量',
-              areaStyle: {},
-              data: [320, 332, 301, 334, 390, 330, 320]
-            },
-            {
-              name: '工程渣土',
-              type: 'line',
-              stack: '总量',
-              label: {
-                normal: {
-                  show: true,
-                  position: 'top'
-                }
-              },
-              areaStyle: {},
-              data: [820, 932, 901, 934, 1290, 1330, 1320]
-            }
-          ]
-        })
+            type: 'bar',
+            data: [1, 2, 3, 4],
+            coordinateSystem: 'polar',
+            name: 'A',
+            stack: 'a'
+          }, {
+            type: 'bar',
+            data: [2, 4, 6, 8],
+            coordinateSystem: 'polar',
+            name: 'B',
+            stack: 'a'
+          }, {
+            type: 'bar',
+            data: [1, 2, 3, 4],
+            coordinateSystem: 'polar',
+            name: 'C',
+            stack: 'a'
+          }],
+          legend: {
+            show: true,
+            data: ['A', 'B', 'C']
+          }
+        }
+        this.charts.setOption(hdjahdjahjdi)
       },
       drawPie2(id) {
         this.charts = echarts.init(document.getElementById(id))
@@ -248,14 +194,15 @@
       },
       getChartData() {
         console.log(this.values[0])
-        if(this.values=="cunliangpaicha"){
+        if (this.values == "cunliangpaicha") {
           this.$nextTick(() => {
             this.drawPie1('main');
-            });
-        }else if(this.values=="sheshijianshe"){
-           this.$nextTick(() => {
             this.drawPie2('main3');
-            });
+          });
+        } else if (this.values == "sheshijianshe") {
+          this.$nextTick(() => {
+            this.drawPie2('main3');
+          });
         }
 
       }
