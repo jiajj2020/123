@@ -52,9 +52,10 @@
   import echarts from 'echarts'
 
   export default {
-    name: '',
     data() {
       return {
+        name: '',
+        staLoading: false,
         values: '',
         options: [{
           value: 'cunliangpaicha',
@@ -277,8 +278,8 @@
             this.drawPie2('main3');
           });
         }
-
-      }
+      },
+      handleChange(){}
     }
     // },
     //调用

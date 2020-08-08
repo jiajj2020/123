@@ -15,26 +15,27 @@
                         </el-form-item>
                     </el-col>
                 </el-row>
-            </el-form>  
-            <el-col :xs="24" :sm="24" :md="13" :lg="7" :xl="7"> 
+            </el-form>
+            <el-col :xs="24" :sm="24" :md="13" :lg="7" :xl="7">
                 <div id="main" style="height:350px"></div>
             </el-col>
-            <el-col offset="2" :xs="24" :sm="24" :md="15" :lg="15" :xl="15"> 
+            <el-col :offset="2" :xs="24" :sm="24" :md="15" :lg="15" :xl="15">
                 <div id="main3" style="height: 350px;"></div>
             </el-col>
-            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24"> 
+            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <div id="main2" style="height: 400px;"></div>
             </el-col>
-        
+
       </div>
     </div>
 </template>
 <script>
   import echarts from 'echarts'
     export default {
-        name: '',
         data () {
             return {
+              name: '',
+              listLoading: false,
                 city:'平顶山市',
                 charts: '',
                 opinion:['装修垃圾','工程渣土','工程泥浆','工程垃圾','拆除垃圾'],
@@ -67,8 +68,8 @@
                 title: {
                 text: '2020年6月平顶山市建筑垃圾排查情况',
                 textStyle: {
-                        fontWeight: 'normal',  
-                        fontSize: 18,//字体大小            
+                        fontWeight: 'normal',
+                        fontSize: 18,//字体大小
                         color: '#fff'
                 },
                 left: 'center'
@@ -109,8 +110,8 @@
                      left: 'center',
                 text: '平顶山建筑垃圾增减情况图',
                 textStyle: {
-                        fontWeight: 'normal',  
-                        fontSize: 18,//字体大小            
+                        fontWeight: 'normal',
+                        fontSize: 18,//字体大小
                         color: '#fff'
                 },
     },
@@ -225,8 +226,8 @@
                 title: {
                 text: '2019年11月-2020年5月平顶山市建筑垃圾排查情况',
                 textStyle: {
-                        fontWeight: 'normal',  
-                        fontSize: 18,//字体大小            
+                        fontWeight: 'normal',
+                        fontSize: 18,//字体大小
                         color: '#fff'
                 },
                 left: 'center'
@@ -352,7 +353,7 @@
     .el-table__row--striped{
         background: #0757A0!important;
     }
-    .el-table tbody tr:hover>td { 
+    .el-table tbody tr:hover>td {
     background-color:#0757A0!important
 }
 .el-table td{
@@ -365,6 +366,6 @@
 .el-table{
     color: #fff;
 }
-    
+
 
 </style>

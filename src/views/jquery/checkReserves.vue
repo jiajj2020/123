@@ -55,6 +55,7 @@
     export default {
         data() {
         return {
+          listLoading: false,
             city: '',
             tableData: [{
           num: '01',

@@ -6,7 +6,7 @@
                     斜测仪监测
                 </div>
             </el-col>
-            <el-col offset="3" :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
+            <el-col :offset="3" :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
                 <div id="mapDiv" class="mapDiv">
                 </div>
             </el-col>
