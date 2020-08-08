@@ -3,6 +3,12 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 
+
+/* 以下使用到的的 Router. 是引入时使用的变量名，根据个人习惯修改，我上面用的 “Router” */
+const originalPush = VueRouter.prototype.push
+    VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
 const routes = [
   {
     // 重定向，用来指向一打开网页就跳转到哪个路由

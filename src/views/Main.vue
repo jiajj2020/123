@@ -60,32 +60,35 @@
     <el-main>
       <el-container>
         <!--左侧导航栏-->
-        <el-aside class="left-container" :style="{width:collpaseWidth}">
+        <el-aside class="left-container" :style="{width:collpaseWidth}" >
           <!--default-active代表导航栏默认选中哪个index, :collapse决定导航栏是否展开，为boolean类型
                     :router决定导航栏是否开启路由模式，即在菜单item上设置路由是否生效，值为boolean类型-->
           <div class="card">
             <el-menu default-active="0" :unique-opened="true" :collapse="isCollapse" :router="true"
               active-text-color="#02A7F0">
+
               <!--index设置当前item的下标，:route则是传一个对象进行，指定路由-->
               <el-menu-item class="text left-action" index="0" :route="{name:'Index'}">
-                <i style="color:#fff" class="fa fa-magic"></i>
+                <span class="iconfont icon-daohangshouye"></span>
                 <span slot="title">首页</span>
               </el-menu-item>
-              <!-- <el-submenu class="text left-action" index="10">
+
+              <el-submenu class="text left-action" index="10">
                 <template class="text left-action" slot="title">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i><span class="text left-action"> 示范城市</span>
+                  <!-- <i class="fa fa-align-justify" aria-hidden="true"></i> -->
+                  <span class="iconfont icon-chengshi"></span>
+                  <span class="text left-action"> 示范城市</span>
                 </template>
 
                 <el-menu-item class="text left-action" index="/pingdingshan" :route="{name:'pingdingshan'}">平顶山市
                 </el-menu-item>
                 <el-menu-item class="text left-action" index="/shenzhen" :route="{name:'shenzhen'}">深圳市</el-menu-item>
-
-
-              </el-submenu> -->
+              </el-submenu>
 
               <el-submenu class="text left-action" index="1">
                 <template class="text left-action" slot="title">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i><span class="text left-action"> 数据查询</span>
+                  <span class="iconfont icon-iconsmallsearch"></span>
+                  <span class="text left-action"> 数据查询</span>
                 </template>
 
                 <el-menu-item class="text left-action" index="/InventoryInvestigation"
@@ -99,7 +102,7 @@
 
               <el-submenu class="text left-action" index="2">
                 <template class="text left-action" slot="title">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i>
+                  <span class="iconfont icon-tongji"></span>
                   <span class="text left-action"> 统计分析</span>
                 </template>
 
@@ -111,7 +114,7 @@
 
               <el-submenu class="text left-action" index="3">
                 <template class="text left-action" slot="title">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i>
+                  <span class="iconfont icon-project_space"></span>
                   <span class="text left-action"> 空间分析</span>
                 </template>
 
@@ -123,7 +126,7 @@
 
               <el-submenu class="text left-action" index="4">
                 <template class="text left-action" slot="title">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i>
+                  <span class="iconfont icon-wulianwang"></span>
                   <span class="text left-action">物联网监测</span>
                 </template>
 
@@ -133,13 +136,15 @@
                 <el-menu-item class="text left-action" index="4-3">钢筋应力监测</el-menu-item>
                 <el-menu-item class="text left-action" index="4-4">边坡地震监测</el-menu-item>
               </el-submenu>
+
               <el-menu-item class="text left-action">
-                <i style="color:#fff" class="fa fa-globe"></i>
+                <span class="iconfont icon-weixing"></span>
                 <span slot="title">光谱库</span>
               </el-menu-item>
+
               <el-menu-item class="text left-action"
                 onclick="javascript:window.open('http://localhost:8081/cesiumMap/map.html')">
-                <i style="color:#fff" class="fa fa-globe"></i>
+                <span class="iconfont icon-3d_rotation"></span>
                 <span>三维系统</span>
               </el-menu-item>
 
@@ -177,7 +182,7 @@
       },
       collpaseWidth: function () { // 左侧导航栏是否展开状态的宽度
         // 如果是展开状态就导航栏宽度为65px，否则200px
-        return this.isCollapse ? '65px' : '200px';
+        return this.isCollapse ? '65px' : '220px';
       }
     },
     methods: {
@@ -229,17 +234,6 @@
     width: 400px;
   }
 
-  /* .h2 {
-    font-family: Georgia, serif;
-    font-weight: bold;
-    font-size: 26px;
-    text-align: center;
-    color: #fff;
-    line-height: 35px;
-    overflow: hidden;
-    height: 100%;
-  } */
-
   .el-header,
   .el-main {
     padding: 0;
@@ -273,6 +267,7 @@
 
   .el-submenu__title {
     background: rgb(8, 67, 121);
+    color: #fff;
   }
 
   .el-submenu {
