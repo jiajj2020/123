@@ -267,7 +267,7 @@
         })
       },
       getChartData() {
-        console.log(this.values[0])
+        // console.log(this.values[0])
         if (this.values == "cunliangpaicha") {
           this.$nextTick(() => {
             this.drawPie1('main');

@@ -214,7 +214,6 @@
           this.heatmap=heatmapOverlay;
       },
       conArea(){
-        console.log("pingdingshan")
         if(this.checkArea==true){
             this.drawArea(this.sz_areaArr[0]);
         }else{

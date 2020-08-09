@@ -42,7 +42,7 @@ export default {
   methods: {
     getPosition() {
       window.onload = function() {
-        console.log(11111)
+        // console.log(11111)
       }
       BaiduMap.init().then((T) => {
                     //初始化地图对象
@@ -50,7 +50,7 @@ export default {
             map = new T.Map("mapDiv");
             //设置显示地图的中心点和级别
             map.centerAndZoom(new T.LngLat(116.40969, 39.89945), zoom);
-            console.log(zoom);
+            // console.log(zoom);
       }).catch(error => {
         console.log(error)
       })

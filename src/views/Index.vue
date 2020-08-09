@@ -41,7 +41,7 @@ export default {
   methods: {
     getPosition() {
       window.onload = function() {
-        console.log(11111)
+        // console.log(11111)
       }
       mapWorld.init().then((T) => {
                     //初始化地图对象
