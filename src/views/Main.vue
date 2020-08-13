@@ -60,11 +60,11 @@
     <el-main>
       <el-container>
         <!--左侧导航栏-->
-        <el-aside class="left-container" :style="{width:collpaseWidth}" >
+        <el-aside class="left-container" style="width:250px" >
           <!--default-active代表导航栏默认选中哪个index, :collapse决定导航栏是否展开，为boolean类型
                     :router决定导航栏是否开启路由模式，即在菜单item上设置路由是否生效，值为boolean类型-->
           <div class="card">
-            <el-menu default-active="0" :unique-opened="true" :collapse="isCollapse" :router="true"
+            <el-menu default-active="0" :unique-opened="true" :router="true"
               active-text-color="#02A7F0">
 
               <!--index设置当前item的下标，:route则是传一个对象进行，指定路由-->
@@ -172,23 +172,11 @@
       return {
         imgUrl: require("../assets/images/locationMap.png"),
         selectCity:'选择城市',
-        isCollapse: false, // 决定左侧导航栏是否展开
       }
     },
     computed: {
-      collpaseIcon: function () { // 左侧导航栏是否展开状态的图标
-        // 如果是展开状态就图标向右，否则图标向左
-        return this.isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold';
-      },
-      collpaseWidth: function () { // 左侧导航栏是否展开状态的宽度
-        // 如果是展开状态就导航栏宽度为65px，否则200px
-        return this.isCollapse ? '65px' : '220px';
-      }
     },
     methods: {
-      changeCollapse: function () { // 更改左侧导航栏展示状态
-        this.isCollapse = !this.isCollapse;
-      },
 
       handleCommand(command) {
         if(command=='pingDS'){
