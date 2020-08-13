@@ -30,7 +30,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
-        <el-col :offset="1":sm="20" :md="2" :lg="2">
+        <el-col :offset="1" :sm="20" :md="2" :lg="2">
           <div style="float:left;color:#fff;">
             <span style="margin-right: 1vh;">Hi , admin</span>
             <span>|</span>
@@ -60,12 +60,11 @@
     <el-main>
       <el-container>
         <!--左侧导航栏-->
-        <el-aside class="left-container" style="width:250px" >
+        <el-aside class="left-container" style="width:250px">
           <!--default-active代表导航栏默认选中哪个index, :collapse决定导航栏是否展开，为boolean类型
                     :router决定导航栏是否开启路由模式，即在菜单item上设置路由是否生效，值为boolean类型-->
           <div class="card">
-            <el-menu default-active="0" :unique-opened="true" :router="true"
-              active-text-color="#02A7F0">
+            <el-menu default-active="0" :unique-opened="true" :router="true" active-text-color="#02A7F0">
 
               <!--index设置当前item的下标，:route则是传一个对象进行，指定路由-->
               <el-menu-item class="text left-action" index="0" :route="{name:'Index'}">
@@ -171,28 +170,28 @@
     data: function () {
       return {
         imgUrl: require("../assets/images/locationMap.png"),
-        selectCity:'选择城市',
+        selectCity: '选择城市',
+        mainPoint: null,
       }
     },
-    computed: {
-    },
+    computed: {},
     methods: {
 
       handleCommand(command) {
-        if(command=='pingDS'){
+        if (command == 'pingDS') {
           this.selectCity = '平顶山市';
-          //指定跳转的地址 this.$router.replace('/menu')
-          this.$router.replace('/pingdingshan')
-        }else if(command=='shenZ'){
+          // this.$router.replace('/pingdingshan')
+          this.$store.state.mainPoint= [113.307718, 33.735241];
+        } else if (command == 'shenZ') {
           this.selectCity = '深圳市';
-          this.$router.replace('/shenzhen')
-        }else{
+          // this.$router.replace('/shenzhen')
+          this.$store.state.mainPoint= [114.044346, 22.691963];
+        } else {
           return
         }
       },
     },
-    created(){
-    }
+    created() {}
   }
 
 </script>
