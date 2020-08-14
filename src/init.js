@@ -6,12 +6,12 @@ export default {
             // 如果已加载直接返回
             // 如果已加载直接返回
             if (typeof window.T !== 'undefined') {
-                console.log('地图脚本初始化成功1111...')
+                // console.log('地图脚本初始化成功1111...')
                 resolve(window.T)
                 return true
             }
             window.onload = function () {
-                console.log('地图脚本初始化成功...')
+                // console.log('地图脚本初始化成功...')
                 // eslint-disable-next-line
                 resolve(window.T)
             }

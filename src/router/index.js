@@ -31,15 +31,15 @@ const routes = [
         component: () => import('../views/Index.vue')
       },
       {
-        path: '/pingdingshan', // 平顶山
-        name: 'pingdingshan',
-        component: () => import('../views/exemCities/pingdingshan.vue')
+        path: '/city', // 城市
+        name: 'city',
+        component: () => import('../views/exemCities/city.vue')
       },
-      {
-        path: '/shenzhen', // 深圳
-        name: 'shenzhen',
-        component: () => import('../views/exemCities/shenzhen.vue')
-      },
+      // {
+      //   path: '/shenzhen', // 深圳
+      //   name: 'shenzhen',
+      //   component: () => import('../views/exemCities/shenzhen.vue')
+      // },
       {
         path: '/sheshi', // 数据查询——设施情况
         name: 'sheshi',

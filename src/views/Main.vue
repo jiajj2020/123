@@ -67,14 +67,18 @@
             <el-menu default-active="0" :unique-opened="true" :router="true" active-text-color="#02A7F0">
 
               <!--index设置当前item的下标，:route则是传一个对象进行，指定路由-->
-              <el-menu-item class="text left-action" index="0" :route="{name:'Index'}">
+              <!-- <el-menu-item class="text left-action" index="0" :route="{name:'Index'}">
                 <span class="iconfont icon-daohangshouye"></span>
                 <span slot="title">首页</span>
+              </el-menu-item> -->
+
+              <el-menu-item class="text left-action" index="/test" :route="{name:'city'}">
+                <span class="iconfont icon-daohangshouye"></span>
+                <span slot="title">城市信息</span>
               </el-menu-item>
 
-              <el-submenu class="text left-action" index="10">
+              <!-- <el-submenu class="text left-action" index="10">
                 <template class="text left-action" slot="title">
-                  <!-- <i class="fa fa-align-justify" aria-hidden="true"></i> -->
                   <span class="iconfont icon-chengshi"></span>
                   <span class="text left-action"> 示范城市</span>
                 </template>
@@ -82,7 +86,7 @@
                 <el-menu-item class="text left-action" index="/pingdingshan" :route="{name:'pingdingshan'}">平顶山市
                 </el-menu-item>
                 <el-menu-item class="text left-action" index="/shenzhen" :route="{name:'shenzhen'}">深圳市</el-menu-item>
-              </el-submenu>
+              </el-submenu> -->
 
               <el-submenu class="text left-action" index="1">
                 <template class="text left-action" slot="title">
@@ -170,7 +174,7 @@
     data: function () {
       return {
         imgUrl: require("../assets/images/locationMap.png"),
-        selectCity: '选择城市',
+        selectCity: '平顶山市',
         mainPoint: null,
       }
     },
@@ -180,18 +184,17 @@
       handleCommand(command) {
         if (command == 'pingDS') {
           this.selectCity = '平顶山市';
-          // this.$router.replace('/pingdingshan')
-          this.$store.state.mainPoint= [113.307718, 33.735241];
+          this.$store.state.mainPoint = [113.307718, 33.735241];
         } else if (command == 'shenZ') {
           this.selectCity = '深圳市';
-          // this.$router.replace('/shenzhen')
-          this.$store.state.mainPoint= [114.044346, 22.691963];
+          this.$store.state.mainPoint = [114.044346, 22.691963];
         } else {
           return
         }
       },
     },
-    created() {}
+    created() {
+    }
   }
 
 </script>
